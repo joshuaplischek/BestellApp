@@ -19,9 +19,10 @@ header img{
 
 .banner-section{
     justify-content: end;
+    align-items: center;
     display: flex;
     width: 100%;
-    height: 300px;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -29,6 +30,34 @@ header img{
     width: 100%;
     object-fit: cover;
     
+}
+
+.restaurante-logo{
+    display: flex;
+    justify-content: center;
+}
+
+.restaurante-logo img{
+    position: absolute;
+    top: 214px;
+    height: 150px;
+    width: 150px;
+    box-shadow: 0px 0px 5px 5px rgba(47, 47, 47, 0.5);
+    border-radius: 40px;
+}
+
+.restaurante-infos{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.restaurante-infos p{
+    font-size: 16px;
+    color: #ff8000;
+}
+
+.restaurante-infos p:hover{
+    cursor: pointer;
 }
 
 footer{
