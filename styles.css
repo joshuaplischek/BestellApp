@@ -1,3 +1,11 @@
+.main-content{
+    display: flex;
+    flex-direction: row;
+}
+.left-content{
+    flex: 1;
+}
+
 header{
     display: flex;
     align-items: center;
@@ -14,7 +22,13 @@ header img{
 #content{
     background-color: white;
     width: 100%;
-    height: calc(100vh - 200px);
+    height: calc(100% - 200px);
+    
+}
+
+.padding{
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .banner-section{
@@ -46,19 +60,20 @@ header img{
     border-radius: 40px;
 }
 
-.restaurante-infos{
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.restaurante-infos p{
-    font-size: 16px;
-    color: #ff8000;
-}
 
 .restaurante-infos p:hover{
     cursor: pointer;
 }
+
+.menu-list{
+    padding: 20px;
+    background-color: blanchedalmond;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: solid rgb(184, 183, 183) 1px;
+    border-radius: 10px;
+}
+
 
 footer{
     width: 100%;

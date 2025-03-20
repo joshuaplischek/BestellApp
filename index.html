@@ -1,35 +1,48 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BestellApp</title>
     <link rel="shortcut icon" href="./assets/icons/apple-touch-icon.png" type="image/x-icon">
+    <script src="./scripts/db.js"></script>
+    <script src="./scripts/alert.js"></script>
+    <script src="./scripts/template.js"></script>
+    <script src="./script.js"></script>
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./styles/assets.css">
     <link rel="stylesheet" href="./styles/basket.css">
     <link rel="stylesheet" href="./assets/fonts/fonts.css">
     <link rel="stylesheet" href="./styles/standart.css">
-    <script src="./script.js"></script>
-    <script src="./scripts/alert.js"></script>
-    <script src="./scripts/db.js"></script>
-    <script src="./scripts/template.js"></script>
 </head>
-<body>
+
+<body onload="init()">
     <header><img src="./assets/img/Logo.png" alt="the LOGO of the BESTELLAPP in white"></header>
-    <div id="content">
-        <section class="banner-section">
-            <img src="./assets/img/banner.jpg" alt="banner of the Website with SANDWITCHES on it">
-        </section>
-        <section class="restaurante-logo">
-            <img src="./assets/img/Stack & Snack Logo.png" alt="Logo of Stack & Snack the Restaurante">
-        </section>
-        <section class="restaurante-infos">
-            <h1>Stack & Snack</h1>
-            <p onclick="showAlerRreviews()"> Bewetrungen (4,9 von 5 Sternen)</p>
-        </section>
+    <div class="main-content">
+        <div class="left-content">
+            <div id="content">
+                <section class="banner-section">
+                    <img src="./assets/img/banner.jpg" alt="banner of the Website with SANDWITCHES on it">
+                </section>
+                <div class="padding">
+                    <section class="restaurante-logo">
+                        <img src="./assets/img/Stack & Snack Logo.png" alt="Logo of Stack & Snack the Restaurante">
+                    </section>
+                    <section class="restaurante-infos">
+                        <h1>Stack & Snack</h1>
+                        <p onclick="showAlerRreviews()"> Bewetrungen (4,9 von 5 Sternen)</p>
+                    </section>
+                    <section id="menuContent"></section>
+                </div>
+            </div>
+        </div>
+        <div id="checkoutArea"></div>
     </div>
+
     <footer></footer>
-    
+
+
 </body>
+
 </html>

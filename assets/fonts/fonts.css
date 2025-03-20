@@ -6,3 +6,22 @@
 body{
     font-family: MainFont;
 }
+
+.menu-list h2{
+    font-weight: bold;
+}
+
+.restaurante-infos p{
+    font-size: 16px;
+    color: #ff8000;
+}
+
+.menu-ingredients{
+    font-size: 12px;
+}
+
+.menu-price{
+    color: #ff8000;
+    font-size: 20px;
+    font-weight: bold;
+}
