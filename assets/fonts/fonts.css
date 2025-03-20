@@ -1,0 +1,8 @@
+@font-face {
+    font-family: MainFont;
+    src: url(./Montserrat/static/Montserrat-Regular.ttf);
+}
+
+body{
+    font-family: MainFont;
+}
