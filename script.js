@@ -26,7 +26,6 @@ function renderOrders() {
 function renderBasket() {
     let basketLayoutRef = document.getElementById(`checkoutArea`);
     basketLayoutRef.innerHTML = basketLayoutTemplate();
-   
 }
 
 function emptyBasket() {

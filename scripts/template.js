@@ -6,6 +6,8 @@ function menuTemplate(i) {
             <p>${menu[i].description}</p>
             <p class="menu-ingredients">${menu[i].ingredients}</p>
             <p class="menu-price">${menu[i].price} €</p>
+            <div class="add-product"><img class="add-to-order" onclick="" src="../assets/img/add.png" alt="addButton"></div>
+            
         </div>
     `
 }
@@ -22,11 +24,11 @@ function basketLayoutTemplate(){
                 </tr>
                 <tr>
                     <td>Lieferkosten</td>
-                    <td class="text-align-end">PREIS</td>
+                    <td class="text-align-end">6,00€</td>
                 </tr>
                 <tr>
-                    <td>Gesamt</td>
-                    <td class="text-align-end">PREIS</td>
+                    <td class="bold">Gesamt</td>
+                    <td class="text-align-end bold">PREIS</td>
                 </tr>
             </table>
         </div>
