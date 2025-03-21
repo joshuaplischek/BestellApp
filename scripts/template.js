@@ -10,10 +10,37 @@ function menuTemplate(i) {
     `
 }
 
-function baskettemplate(i) {
+function basketLayoutTemplate(){
     return/*html*/`
-        <div><h2>Warenkorb</h2></div>
-        <div></div>
-        <div></div>
+        <div class="basket-title"><h2>Warenkorb</h2></div>
+        <div id="orderlist"></div>
+        <div class="sum">
+            <table>
+                <tr>
+                    <td>Zwischensumme</td>
+                    <td class="text-align-end">PREIS</td>
+                </tr>
+                <tr>
+                    <td>Lieferkosten</td>
+                    <td class="text-align-end">PREIS</td>
+                </tr>
+                <tr>
+                    <td>Gesamt</td>
+                    <td class="text-align-end">PREIS</td>
+                </tr>
+            </table>
+        </div>
+    `
+}
+
+function ordersTemplate(o) {
+    return/*html*/`
+        <p>${basket[o]}</p>  
+    `
+}
+
+function printEmptyBasket() {
+    return/*html*/`
+        <p>Der Warenkorb ist leer!</p>
     `
 }

@@ -1,9 +1,45 @@
 #checkoutArea{
+    display: flex;
+    flex-direction: column;
     border: solid 1px;
     width: 400px;
     height: 100vh;
     box-shadow: -10px 0px 5px -7px rgba(0,0,0,0.5);
     position: sticky;
     top: 0;
-    
+}
+
+.basket-title{
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    border-bottom: solid rgba(138, 138, 138, 0.579) 1px;
+}
+
+.basket-title h2{
+    font-weight: bold;
+    font-size: 32px;
+}
+
+#orderlist{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: solid rgba(138, 138, 138, 0.579) 1px;
+}
+
+.sum table{
+    padding-left: 20px;
+    padding-right: 20px;
+    border: solid 1px;
+    width: 100%;
+}
+
+.text-align-end{
+    text-align: end;
 }
