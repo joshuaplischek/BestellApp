@@ -83,11 +83,11 @@ header img{
 
 .add-to-order{
     height: 30px;
-    cursor: pointer;
 }
 
 .add-to-order:hover{
     filter: grayscale(30%);
+    cursor: pointer;
 }
 
 

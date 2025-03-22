@@ -48,8 +48,8 @@ function addToBasket(i) {
 }
 
 function deleteOrder(o){
-    let despawn = basket[o];
-    basket.splice(despawn,1);
+    let despawn = basket.splice(o,1);
+    despawn;
     CheckOrders();
 }
 
