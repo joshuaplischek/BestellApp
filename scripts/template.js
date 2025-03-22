@@ -6,13 +6,13 @@ function menuTemplate(i) {
             <p>${menu[i].description}</p>
             <p class="menu-ingredients">${menu[i].ingredients}</p>
             <p class="menu-price">${menu[i].price} €</p>
-            <div class="add-product"><img class="add-to-order" onclick="" src="../assets/img/add.png" alt="addButton"></div>
+            <div class="add-product"><img class="add-to-order" onclick="addToBasket(${i})" src="../assets/img/add.png" alt="addButton"></div>
             
         </div>
     `
 }
 
-function basketLayoutTemplate(){
+function basketLayoutTemplate(o){
     return/*html*/`
         <div class="basket-title"><h2>Warenkorb</h2></div>
         <div id="orderlist"></div>
@@ -37,7 +37,20 @@ function basketLayoutTemplate(){
 
 function ordersTemplate(o) {
     return/*html*/`
-        <p>${basket[o]}</p>  
+    <div class="order-design">
+        <div class="title-bin">
+            <h2>${basket[o].title}</h2> 
+            <img onclick="deleteOrder(${o})" src="../assets/img/trashbin.png" alt="">
+        </div>
+        <div class="amount-price">
+            <div class="amount-area">
+                <img src="../assets/img/minus.png" alt="">
+                <p>1</p>
+                <img src="../assets/img/plus.png" alt="">
+            </div>
+            <p class="baskte-oder-price">${basket[o].price}€</p>
+        </div>
+    </div>
     `
 }
 

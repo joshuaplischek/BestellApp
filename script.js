@@ -41,4 +41,16 @@ function CheckOrders() {
     }
 }
 
+function addToBasket(i) {
+    let addorder = menu[i];
+    basket.push(addorder);
+    CheckOrders();
+}
+
+function deleteOrder(o){
+    let despawn = basket[o];
+    basket.splice(despawn,1);
+    CheckOrders();
+}
+
 
