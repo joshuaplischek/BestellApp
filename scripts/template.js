@@ -42,13 +42,13 @@ function ordersTemplate(o) {
             <h2>${basket[o].title}</h2> 
             <img onclick="deleteOrder(${o})" src="../assets/img/trashbin.png" alt="">
         </div>
-        <div class="amount-price">
+        <div class="amount-price" id="amountPrice">
             <div class="amount-area">
-                <img src="../assets/img/minus.png" alt="">
+                <img onclick="deleteAPeace(${o})" src="../assets/img/minus.png" alt="">
                 <p>1</p>
-                <img src="../assets/img/plus.png" alt="">
+                <img onclick="addOneMore(${o})" src="../assets/img/plus.png" alt="">
             </div>
-            <p class="baskte-oder-price">${basket[o].price}€</p>
+            <output class="baskte-oder-price" id="orderPriceInnerBasket">${basket[o].price}€</output>
         </div>
     </div>
     `

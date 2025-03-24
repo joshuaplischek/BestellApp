@@ -17,9 +17,8 @@ function renderMenu() {
 function renderOrders() {
     let renderOrderRef = document.getElementById(`orderlist`);
     renderOrderRef.innerHTML ="";
-
     for (let o = 0; o < basket.length; o++) {
-        renderOrderRef.innerHTML += ordersTemplate(o);
+        renderOrderRef.innerHTML += ordersTemplate(o);  
     }
 }
 

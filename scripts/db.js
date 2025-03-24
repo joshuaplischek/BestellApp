@@ -1,5 +1,7 @@
 let basket = []
 
+let updatePrice = []
+
 let menu = [
     {
       "title": "Der Klassiker: Ein Stapel für die Ewigkeit",
