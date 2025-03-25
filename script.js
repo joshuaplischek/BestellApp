@@ -53,7 +53,23 @@ function deleteOrder(o){
 }
 
 function addOneMore(o){
-    
+    let amountPriceRef = document.getElementById(`orderPriceInnerBasket${o}`)
+    let amountorder = document.getElementById(`orderAmount${o}`);
+    let count = document.getElementById(`orderAmount${o}`).value;
+    count++;
+    amountorder.innerHTML = count+"";
+}
+
+function deleteAPeace(o){
+    let amountorder = document.getElementById(`orderAmount${o}`);
+    let count = document.getElementById(`orderAmount${o}`).value;;
+    if (count > 1) {
+        count--;
+        amountorder.innerHTML = count+"";
+    } else {
+        deleteOrder(o)
+    }
+
 }
 
 

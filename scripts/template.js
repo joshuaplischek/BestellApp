@@ -48,7 +48,7 @@ function ordersTemplate(o) {
                 <output id="orderAmount${o}">1</output>
                 <img onclick="addOneMore(${o})" src="../assets/img/plus.png" alt="">
             </div>
-            <output class="baskte-oder-price" id="orderPriceInnerBasket">${basket[o].price}€</output>
+            <output class="baskte-oder-price" id="orderPriceInnerBasket${o}">${basket[o].price}€</output>
         </div>
     </div>
     `
