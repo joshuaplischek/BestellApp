@@ -53,23 +53,27 @@ function deleteOrder(o){
 }
 
 function addOneMore(o){
-    let amountPriceRef = document.getElementById(`orderPriceInnerBasket${o}`)
+    let amountPriceRef = document.getElementById(`orderPriceInnerBasket${o}`);
+    let orderPrice = basket[o].price;
     let amountorder = document.getElementById(`orderAmount${o}`);
     let count = document.getElementById(`orderAmount${o}`).value;
     count++;
     amountorder.innerHTML = count+"";
+    amountPriceRef.innerHTML = orderPrice * count ;
 }
 
 function deleteAPeace(o){
+    let amountPriceRef = document.getElementById(`orderPriceInnerBasket${o}`);
+    let orderPrice = basket[o].price;
     let amountorder = document.getElementById(`orderAmount${o}`);
     let count = document.getElementById(`orderAmount${o}`).value;;
     if (count > 1) {
         count--;
         amountorder.innerHTML = count+"";
+        amountPriceRef.innerHTML = orderPrice * count ;
     } else {
         deleteOrder(o)
     }
-
 }
 
 
