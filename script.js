@@ -115,7 +115,6 @@ function calculateTotal() {
     if (subtotalRef) {
         subtotalRef.innerHTML = subtotal.toFixed(2) + " €";
         basketPrice.innerHTML = subtotal.toFixed(2) + " €";
-
     }
     let total = subtotal + deliveryCost;
     let totalRef = document.getElementById(`endSum`);

@@ -24,7 +24,7 @@ function overlayTemplate(){
                 </tr>
             </table>
         </div>
-        <div><button>Bestellen</button></div>
+        <div class="order-button"><button id="orderButton">Bestellen</button></div>
         <div><button onclick="overlayOff()">Close</button></div>
     `
 }
@@ -60,7 +60,7 @@ function basketLayoutTemplate(o){
                     <td class="text-align-end bold" id="endSum">0</td>
                 </tr>
             </table>
-            <div><button>Bestellen</button></div>
+            <div class="order-button"><button id="orderButton">Bestellen</button></div>
         </div>
     `
 }
