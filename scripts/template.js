@@ -1,4 +1,8 @@
-
+function basketButtonTemplate() {
+    return/*html*/`
+        <button id=basketButton></button>
+    `
+}
 function menuTemplate(i) {
     return/*html*/`
         <div class="menu-list">

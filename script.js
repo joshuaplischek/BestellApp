@@ -6,12 +6,14 @@ function init() {
 }
 
 function renderMenu() {
+    let basketRendering = document.getElementById(`basketButtonArea`)
     let renderMenuRef = document.getElementById(`menuContent`);
     renderMenuRef.innerHTML ="";
 
     for (let i = 0; i < menu.length; i++) {
         renderMenuRef.innerHTML += menuTemplate(i); 
     }
+    basketRendering.innerHTML = basketButtonTemplate();
 }
 
 function renderOrders() {
@@ -29,13 +31,15 @@ function renderBasket() {
 }
 
 function emptyBasket() {
+    let basketPrice = document.getElementById(`basketButton`)
     let totalRef = document.getElementById(`endSum`);
     let subtotalRef = document.getElementById(`storedSum`);
     let noItems = document.getElementById(`orderlist`);
     noItems.innerHTML = printEmptyBasket();
     if (basket == "") {
-        subtotalRef.innerHTML = 0;
-        totalRef.innerHTML = 0;
+        subtotalRef.innerHTML = 0 + " €";
+        totalRef.innerHTML = 0 + " €";
+        basketPrice.innerHTML = 0.00 + " €";
     }
 }
 
@@ -106,9 +110,12 @@ function getSubtotal() {
 function calculateTotal() {
     let subtotal = getSubtotal();
     let deliveryCost = 6.00;
+    let basketPrice = document.getElementById(`basketButton`)
     let subtotalRef = document.getElementById(`storedSum`);
     if (subtotalRef) {
         subtotalRef.innerHTML = subtotal.toFixed(2) + " €";
+        basketPrice.innerHTML = subtotal.toFixed(2) + " €";
+
     }
     let total = subtotal + deliveryCost;
     let totalRef = document.getElementById(`endSum`);
