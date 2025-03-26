@@ -124,4 +124,18 @@ function calculateTotal() {
     }
 }
 
+function overlayOn() {
+    document.getElementById("overlay").style.display = "block";
+    renderOverlay();
+  }
+
+function renderOverlay() {
+    let overlayBasket = document.getElementById(`overlay`);
+    overlayBasket.innerHTML = overlayTemplate();
+}
+  
+  function overlayOff() {
+    document.getElementById("overlay").style.display = "none";
+  }
+
 

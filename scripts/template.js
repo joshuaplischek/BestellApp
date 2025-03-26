@@ -1,8 +1,34 @@
 function basketButtonTemplate() {
     return/*html*/`
-        <button id=basketButton></button>
+        <button id=basketButton onclick="overlayOn()"></button>
     `
 }
+
+function overlayTemplate(){
+    return/*html*/`
+        <div class="basket-title"><h2>Warenkorb</h2></div>
+        <div id="orderlist"></div>
+        <div class="sum">
+            <table>
+                <tr>
+                    <td>Zwischensumme</td>
+                    <td class="text-align-end" id="storedSum">0</td>
+                </tr>
+                <tr>
+                    <td>Lieferkosten</td>
+                    <td class="text-align-end" id="deliveryCost">6.00 €</td>
+                </tr>
+                <tr>
+                    <td class="bold">Gesamt</td>
+                    <td class="text-align-end bold" id="endSum">0</td>
+                </tr>
+            </table>
+        </div>
+        <div><button>Bestellen</button></div>
+        <div><button onclick="overlayOff()">Close</button></div>
+    `
+}
+
 function menuTemplate(i) {
     return/*html*/`
         <div class="menu-list">
@@ -11,7 +37,6 @@ function menuTemplate(i) {
             <p class="menu-ingredients">${menu[i].ingredients}</p>
             <p class="menu-price">${menu[i].price} €</p>
             <div class="add-product"><img class="add-to-order" onclick="addToBasket(${i})" src="../assets/img/add.png" alt="addButton"></div>
-            
         </div>
     `
 }
@@ -35,6 +60,7 @@ function basketLayoutTemplate(o){
                     <td class="text-align-end bold" id="endSum">0</td>
                 </tr>
             </table>
+            <div><button>Bestellen</button></div>
         </div>
     `
 }
