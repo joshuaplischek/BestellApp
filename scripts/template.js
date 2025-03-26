@@ -20,15 +20,15 @@ function basketLayoutTemplate(o){
             <table>
                 <tr>
                     <td>Zwischensumme</td>
-                    <td class="text-align-end">PREIS</td>
+                    <td class="text-align-end" id="storedSum">0</td>
                 </tr>
                 <tr>
                     <td>Lieferkosten</td>
-                    <td class="text-align-end">6,00€</td>
+                    <td class="text-align-end" id="deliveryCost">6.00 €</td>
                 </tr>
                 <tr>
                     <td class="bold">Gesamt</td>
-                    <td class="text-align-end bold">PREIS</td>
+                    <td class="text-align-end bold" id="endSum">0</td>
                 </tr>
             </table>
         </div>
