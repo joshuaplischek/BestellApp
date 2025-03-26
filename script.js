@@ -51,9 +51,20 @@ function CheckOrders() {
     }
 }
 
+function getIndexMenu(idCheck) {
+    let indexNumber = basket.findIndex(obj => obj.id ==idCheck);
+    return indexNumber;
+}
+
 function addToBasket(i) {
     let addorder = menu[i];
-    basket.push(addorder);
+    let getIndexCage = getIndexMenu(i);
+    if (getIndexCage == -1){
+        basket.push(addorder);
+    } else{
+        basket[getIndexCage].amount++;
+    }
+    
     CheckOrders();  
 }
 

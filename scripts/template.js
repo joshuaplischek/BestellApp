@@ -75,7 +75,7 @@ function ordersTemplate(o) {
         <div class="amount-price" id="amountPrice">
             <div class="amount-area">
                 <img onclick="deleteAPeace(${o})" src="../assets/img/minus.png" alt="">
-                <output id="orderAmount${o}">1</output>
+                <output id="orderAmount${o}">${basket[o].amount}</output>
                 <img onclick="addOneMore(${o})" src="../assets/img/plus.png" alt="">
             </div>
             <output class="baskte-oder-price" id="orderPriceInnerBasket${o}">${basket[o].price}€</output>
