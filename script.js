@@ -87,16 +87,17 @@ function deleteOrder(o){
     let despawn = basket.splice(o,1);
     despawn;
     CheckOrders();
+    resetAmount();
 }
 
 function addOneMore(o){
     let amountPriceRef = document.getElementById(`orderPriceInnerBasket${o}`);
     let orderPrice = basket[o].price;
     let amountorder = document.getElementById(`orderAmount${o}`);
-    let count = document.getElementById(`orderAmount${o}`).value;
-    count++;
-    amountorder.innerHTML = count+"";
-    amountPriceRef.innerHTML = orderPrice * count ;
+    basket[o].amount++;
+    let count = basket[o].amount;
+    amountorder.innerHTML = count;
+    amountPriceRef.innerHTML = orderPrice * count;
     calculatePrice(o)
 }
 
@@ -104,11 +105,11 @@ function deleteAPeace(o){
     let amountPriceRef = document.getElementById(`orderPriceInnerBasket${o}`);
     let orderPrice = basket[o].price;
     let amountorder = document.getElementById(`orderAmount${o}`);
-    let count = document.getElementById(`orderAmount${o}`).value;
-    if (count > 1) {
-        count--;
-        amountorder.innerHTML = count+"";
-        amountPriceRef.innerHTML = orderPrice * count ;
+    if (basket[o].amount > 1) {
+        basket[o].amount--;
+        let count = basket[o].amount;
+        amountorder.innerHTML = count;
+        amountPriceRef.innerHTML = orderPrice * count;
         calculatePrice(o)
     } else {
         deleteOrder(o)
@@ -202,11 +203,18 @@ function orderNow() {
     } else{
         basket.length = 0;
         document.getElementById("overlayOrderComplete").style.display = "flex";  
-        CheckOrders()
+        CheckOrders();
+        resetAmount();
     }   
 }
 
 function closeOrderOverlay() {
     document.getElementById("overlayOrderComplete").style.display = "none";
+}
+
+function resetAmount() {
+    for (let indexAmount = 0; indexAmount < menu.length; indexAmount++) {
+        menu[indexAmount].amount = 1;
+    }
 }
 
