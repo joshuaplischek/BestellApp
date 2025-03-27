@@ -7,25 +7,25 @@ function basketButtonTemplate() {
 function overlayTemplate(){
     return/*html*/`
         <div class="basket-title"><h2>Warenkorb</h2></div>
-        <div id="orderlist"></div>
+        <div id="overlayOrderlist"></div>
         <div class="sum">
             <table>
                 <tr>
                     <td>Zwischensumme</td>
-                    <td class="text-align-end" id="storedSum">0</td>
+                    <td class="text-align-end" id="storedOverlaySum">0</td>
                 </tr>
                 <tr>
                     <td>Lieferkosten</td>
-                    <td class="text-align-end" id="deliveryCost">6.00 €</td>
+                    <td class="text-align-end" id="deliveryOverlayCost">6.00 €</td>
                 </tr>
                 <tr>
                     <td class="bold">Gesamt</td>
-                    <td class="text-align-end bold" id="endSum">0</td>
+                    <td class="text-align-end bold" id="endOverlaySum">0</td>
                 </tr>
             </table>
         </div>
-        <div class="order-button"><button id="orderButton">Bestellen</button></div>
-        <div><button onclick="overlayOff()">Close</button></div>
+        <div class="order-button-overlay"><button id="orderButton" onclick="orderNow()">Bestellen</button>
+        <button id="closeOverlay" onclick="overlayOff()">Close</button></div>
     `
 }
 
@@ -41,7 +41,7 @@ function menuTemplate(i) {
     `
 }
 
-function basketLayoutTemplate(o){
+function basketLayoutTemplate(){
     return/*html*/`
         <div class="basket-title"><h2>Warenkorb</h2></div>
         <div id="orderlist"></div>
@@ -60,7 +60,7 @@ function basketLayoutTemplate(o){
                     <td class="text-align-end bold" id="endSum">0</td>
                 </tr>
             </table>
-            <div class="order-button"><button id="orderButton">Bestellen</button></div>
+            <div class="order-button"><button id="orderButton" onclick="orderNow()">Bestellen</button></div>
         </div>
     `
 }

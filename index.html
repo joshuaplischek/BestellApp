@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./styles/basket.css">
     <link rel="stylesheet" href="./assets/fonts/fonts.css">
     <link rel="stylesheet" href="./styles/standart.css">
+    <link rel="stylesheet" href="./styles/overlay.css">
 </head>
 <body onload="init()">
     <header><img src="./assets/img/Logo.png" alt="the LOGO of the BESTELLAPP in white"></header>
@@ -38,6 +39,13 @@
         <div id="checkoutArea"></div>
         <div id="basketButtonArea"></div>
         <div id="overlay"></div>
+        <div id="overlayOrderComplete">
+            <div class="order-complete">
+                <img src="./assets/img/ok-1976099_1280.png" alt="check">
+                <h2>Deine Bestllung ist auf dem Weg!</h2>
+                <button onclick="closeOrderOverlay()">Zurück</button>
+            </div>
+        </div>
     </div>
     <footer></footer>
 </body>
