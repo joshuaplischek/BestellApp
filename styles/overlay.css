@@ -45,6 +45,11 @@
     background-color: rgb(195, 0, 0);
 }
 
+#overlayOrderlist{
+    height: 300px;
+    overflow: scroll;
+}
+
 @media(max-width: 760px){
     .order-complete{
         height: 300px;
