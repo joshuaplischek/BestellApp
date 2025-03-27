@@ -205,4 +205,30 @@
     #basketButtonArea{
         display: none;
     }
+
+}
+
+    @media(max-width: 400px){
+        .order-design{
+            flex-direction: column;
+        }
+
+        .title-bin{
+            flex-direction: column;
+        }
+
+        .title-bin h2{
+            text-align: center;
+        }
+}
+
+@media(max-width: 380px){
+    .order-design{
+        width: 100%;
+    }
+
+    .amount-price{
+        padding-right: 10px;
+        padding-left: 10px;
+    }
 }

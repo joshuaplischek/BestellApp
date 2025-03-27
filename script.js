@@ -44,7 +44,7 @@ function checkAmount(o) {
     if (basket[o].amount > 1){
         let basketAmount = basket[o].amount;
         let basketPrice = basket[o].price;
-        orderPrice.innerHTML = basketAmount * basketPrice;
+        orderPrice.innerHTML = basketAmount * basketPrice + " €";
     }
 }
 
@@ -53,7 +53,7 @@ function checkOverlayAmount(indexOverlayBasket) {
     if (basket[indexOverlayBasket].amount > 1) {
         let basketAmount = basket[indexOverlayBasket].amount;
         let basketPrice = basket[indexOverlayBasket].price;
-        orderOverlayPrice.innerHTML = basketAmount * basketPrice;
+        orderOverlayPrice.innerHTML = basketAmount * basketPrice + " €";
     }
 }
 
