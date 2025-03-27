@@ -84,6 +84,25 @@ function ordersTemplate(o) {
     `
 }
 
+function overlayOrdersTemplate(indexOverlayBasket) {
+    return/*html*/`
+    <div class="order-design">
+        <div class="title-bin">
+            <h2>${basket[indexOverlayBasket].title}</h2> 
+            <img onclick="deleteOverlayOrder(${indexOverlayBasket})" src="../assets/img/trashbin.png" alt="">
+        </div>
+        <div class="amount-price" id="amountPrice">
+            <div class="amount-area">
+                <img onclick="deleteAPeace(${indexOverlayBasket})" src="../assets/img/minus.png" alt="">
+                <output id="orderAmount${indexOverlayBasket}">${basket[indexOverlayBasket].amount}</output>
+                <img onclick="addOneMore(${indexOverlayBasket})" src="../assets/img/plus.png" alt="">
+            </div>
+            <output class="baskte-oder-price" id="OverlayorderPriceInnerBasket${indexOverlayBasket}">${basket[indexOverlayBasket].price}€</output>
+        </div>
+    </div>
+    `
+}
+
 function printEmptyBasket() {
     return/*html*/`
         <p>Der Warenkorb ist leer!</p>

@@ -23,8 +23,13 @@ function renderOrders() {
     renderOrderRef.innerHTML ="";
     renderOverlayOrderRef.innerHTML = "";
     for (let o = 0; o < basket.length; o++) {
-        renderOrderRef.innerHTML += ordersTemplate(o); 
-        renderOverlayOrderRef.innerHTML += ordersTemplate(o);
+        renderOrderRef.innerHTML += ordersTemplate(o);
+        checkAmount(o)
+    }
+
+    for (let indexOverlayBasket = 0; indexOverlayBasket < basket.length; indexOverlayBasket++) {
+        renderOverlayOrderRef.innerHTML += overlayOrdersTemplate(indexOverlayBasket);
+        checkOverlayAmount(indexOverlayBasket);
     }
     calculateTotal()
 }
@@ -32,6 +37,24 @@ function renderOrders() {
 function renderBasket() {
     let basketLayoutRef = document.getElementById(`checkoutArea`);
     basketLayoutRef.innerHTML = basketLayoutTemplate();
+}
+
+function checkAmount(o) {
+    let orderPrice = document.getElementById(`orderPriceInnerBasket${o}`)
+    if (basket[o].amount > 1){
+        let basketAmount = basket[o].amount;
+        let basketPrice = basket[o].price;
+        orderPrice.innerHTML = basketAmount * basketPrice;
+    }
+}
+
+function checkOverlayAmount(indexOverlayBasket) {
+    let orderOverlayPrice = document.getElementById(`OverlayorderPriceInnerBasket${indexOverlayBasket}`)
+    if (basket[indexOverlayBasket].amount > 1) {
+        let basketAmount = basket[indexOverlayBasket].amount;
+        let basketPrice = basket[indexOverlayBasket].price;
+        orderOverlayPrice.innerHTML = basketAmount * basketPrice;
+    }
 }
 
 function emptyBasket() {
@@ -90,26 +113,25 @@ function deleteOrder(o){
     resetAmount();
 }
 
+function deleteOverlayOrder(indexOverlayBasket){
+    let despawn = basket.splice(indexOverlayBasket,1);
+    despawn;
+    CheckOrders();
+    resetAmount();
+}
+
 function addOneMore(o){
-    let amountPriceRef = document.getElementById(`orderPriceInnerBasket${o}`);
-    let orderPrice = basket[o].price;
-    let amountorder = document.getElementById(`orderAmount${o}`);
     basket[o].amount++;
-    let count = basket[o].amount;
-    amountorder.innerHTML = count;
-    amountPriceRef.innerHTML = orderPrice * count;
-    calculatePrice(o)
+    checkAmount(o);
+    CheckOrders();
+    calculatePrice(o);
 }
 
 function deleteAPeace(o){
-    let amountPriceRef = document.getElementById(`orderPriceInnerBasket${o}`);
-    let orderPrice = basket[o].price;
-    let amountorder = document.getElementById(`orderAmount${o}`);
     if (basket[o].amount > 1) {
         basket[o].amount--;
-        let count = basket[o].amount;
-        amountorder.innerHTML = count;
-        amountPriceRef.innerHTML = orderPrice * count;
+        checkAmount(o);
+        CheckOrders();
         calculatePrice(o)
     } else {
         deleteOrder(o)
